@@ -2,6 +2,9 @@ package Game;
 
 public class GameState{
 
+    private static final String ALIVE_MARKER = "X";
+    private static final String DEAD_MARKER = "-";
+
     private boolean[][] board;
 
     public GameState(boolean[][] board) {
@@ -127,6 +130,22 @@ public class GameState{
         return this.board.length;
     }
 
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int row=0; row<this.getHeight(); row++){
+            for (int col=0; col<this.getWidth(); col++){
+                if (this.board[row][col] == GameOfLife.ALIVE){
+                    stringBuilder.append(ALIVE_MARKER + " ");
+                }
+                else {
+                    stringBuilder.append(DEAD_MARKER + " ");
+                }
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
+    
     public boolean equals(GameState otherGameState){
         return this.getWidth() == otherGameState.getWidth()
                 && this.getHeight() == otherGameState.getHeight()
