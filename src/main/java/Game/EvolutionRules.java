@@ -1,6 +1,6 @@
 package Game;
 
-public class CellEvolutionRules {
+public class EvolutionRules {
 
     private static final int UNDER_POPULATION_BOUND = 2;
     private static final int OVER_POPULATION_BOUND = 3;

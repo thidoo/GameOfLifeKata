@@ -2,10 +2,10 @@ package Game;
 
 public class GameStateTransformer {
 
-    private CellEvolutionRules cellEvolutionRules;
+    private EvolutionRules evolutionRules;
 
-    public GameStateTransformer(CellEvolutionRules cellEvolutionRules) {
-        this.cellEvolutionRules = cellEvolutionRules;
+    public GameStateTransformer(EvolutionRules evolutionRules) {
+        this.evolutionRules = evolutionRules;
     }
 
     public GameState transform(GameState initialState) {
@@ -16,7 +16,7 @@ public class GameStateTransformer {
 
         for (int row=0; row < width; row++){
             for (int column=0; column < height; column++){
-                newState[row][column] = cellEvolutionRules.apply(initialState.getLifeStatusOfCellAt(row, column),
+                newState[row][column] = evolutionRules.apply(initialState.getLifeStatusOfCellAt(row, column),
                                                             initialState.getLiveNeighbourCountOfCellAt(row, column));
             }
         }

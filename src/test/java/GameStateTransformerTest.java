@@ -1,4 +1,4 @@
-import Game.CellEvolutionRules;
+import Game.EvolutionRules;
 import Game.GameOfLife;
 import Game.GameState;
 import Game.GameStateTransformer;
@@ -10,13 +10,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GameStateTransformerTest {
 
-    private CellEvolutionRules cellEvolutionRules;
+    private EvolutionRules evolutionRules;
     private GameStateTransformer gameStateTransformer;
 
     @Before
     public void setUp() {
-        cellEvolutionRules = new CellEvolutionRules();
-        gameStateTransformer = new GameStateTransformer(cellEvolutionRules);
+        evolutionRules = new EvolutionRules();
+        gameStateTransformer = new GameStateTransformer(evolutionRules);
     }
 
 //    @Test
